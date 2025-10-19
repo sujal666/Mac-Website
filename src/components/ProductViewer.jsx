@@ -15,9 +15,9 @@ const ProductViewer = () => {
            <h2>Take a closer look</h2>
 
            <div className='controls'>
-                  <p className='info'>
-                     MacBookPro 16" in {color}
-                  </p>
+                  {/* <p className='info'>
+                     MacBook Pro | Available in 14" and 16" in Space Gray & Space Gray & Dark colors 
+                  </p> */}
 
                   <div className='flex-center gap-5 mt-5'>
                     <div className='color-control'>
@@ -45,12 +45,8 @@ const ProductViewer = () => {
            </div>
             <Canvas id='canvas' camera={{position:[0,2,5], fov:50, near:0.1, far:100}}>
                 <StudioLights />
-               <MacbookModel14
-                  position={[0,0,0]} 
-                  scale={ 0.06}
-                  
-               />
-              <ModelSwitcher  scale={isMobile? scale - 0.03 : scale}/>
+
+              <ModelSwitcher  scale={isMobile? scale - 0.03 : scale} isMobile={isMobile}/>
             </Canvas>
     </section>
   )
